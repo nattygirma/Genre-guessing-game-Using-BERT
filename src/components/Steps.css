@@ -1,0 +1,94 @@
+.steps-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.step {
+  background: #ffffff;
+  border-radius: 0;
+  margin-bottom: 0.1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.step:first-child {
+  border-radius: 5px 5px 0 0;
+}
+
+.step:last-child {
+  border-radius: 0 0 5px 5px;
+}
+
+.step-header {
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ebeaea;
+  color: white;
+}
+
+.step-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.step-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.step-content.expanded {
+  padding: 1.5rem;
+  max-height: 1000px;
+}
+
+.step-description {
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.code-block {
+    text-align: left;
+  color: #4b5563;
+  border-radius: 8px;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0;
+  color: #090909;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.step-icon {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.step.expanded .step-icon {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .step-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .code-block {
+    padding: 1rem;
+  }
+  
+  .code-block pre {
+    font-size: 0.8rem;
+  }
+} 
