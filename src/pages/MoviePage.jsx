@@ -13,7 +13,7 @@ function Favorites() {
 
   useEffect(() => {
     async function fetchMovie() {
-      const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=f45864036313d94e90d3388ffbc07b7f`);
+      const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${import.meta.env.VITE_MOVIE_KEY}`);
       const data = await response.json();
       console.log(data);
       setMovie(data);
