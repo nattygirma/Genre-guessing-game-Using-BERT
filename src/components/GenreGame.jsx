@@ -36,7 +36,9 @@ const GenreGame = ({ isOpen, onClose, movie }) => {
   const normalizeGenre = (genre) => {
     const genreMap = {
       'Science Fiction': 'Sci-Fi',
-      'Sci-Fi': 'Sci-Fi'
+      'Sci-Fi': 'Sci-Fi',
+      'Documentary': 'Documentary',
+      'Biography': 'Documentary'
     };
     return genreMap[genre] || genre;
   };
@@ -208,6 +210,11 @@ const GenreGame = ({ isOpen, onClose, movie }) => {
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                   {aiGuesses.map(guess => {
                     const isCorrect = movie.genres.some(g => normalizeGenre(g.name) === normalizeGenre(guess.name));
+                    if (guess.name === 'Biography') {
+                      guess.name = 'Documentary';
+                    }else if (guess.name === 'Science Fiction') {
+                      guess.name = 'Sci-Fi';
+                    }
                     return (
                       <div 
                         key={guess.name}
