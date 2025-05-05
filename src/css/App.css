@@ -13,11 +13,15 @@
  .title{
   color: rgb(39, 39, 39) !important;
  }
+ 
  table th{
   color: rgb(39, 39, 39) !important;
  }
  .movie-details{
   background-color: rgb(38, 38, 38) !important;
+}
+pre{
+  background-color: rgb(234, 234, 250) !important;
 }
 .sub-section{
   padding-bottom: 1rem !important;
