@@ -9,14 +9,14 @@ import MovieDetails from "./pages/MoviePage";
 import Home from "./pages/Home";
 import Motivation from "./components/Motivation.jsx";
 import Project from "./pages/Project";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import { MovieProvider } from "./contexts/MovieContext";
 
 
 function App() {
   return (
+      // <HashRouter>
     <MovieProvider>
-      <BrowserRouter>
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Project />} />
@@ -25,8 +25,8 @@ function App() {
           <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
       </main>
-      </BrowserRouter>
     </MovieProvider>
+      // </HashRouter>
   );
 }
 
