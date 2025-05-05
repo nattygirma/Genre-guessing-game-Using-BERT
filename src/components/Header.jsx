@@ -1,5 +1,10 @@
+import { predictGenre } from "../services/api";
 
 const Header = () => {
+  const predictGenres = async () => {
+    const movie = await predictGenre("A movie about a girl who is a detective and she is trying to solve a murder case.");
+    console.log(movie);
+  };
   return (
     <section className="hero">
       <div className="hero-body">
@@ -21,7 +26,7 @@ const Header = () => {
                 </span>
                 <br />
                 <span className="author-block gradient-text">
-                  <button className="button is-normal is-rounded is-dark" onClick={() => window.location.href = '/demo'}>
+                  <button className="button is-normal is-rounded is-dark" onClick={() => predictGenres()}>
                     <span className="icon">
                       <i className="fas fa-globe"></i>
                     </span>
