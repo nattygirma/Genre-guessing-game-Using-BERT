@@ -1,24 +1,16 @@
 // api/predict.js
 const apiUrl = import.meta.env.VITE_API_URL; 
-console.log("apiUrl_predict", apiUrl);
+console.log("apiUrl_222", apiUrl);
 export default async function handler(req, res) {
-    // Prepare fetch options
-    const fetchOptions = {
+    const response = await fetch(apiUrl + '/predict', {
       method: req.method,
-      headers: { ...req.headers, host: undefined },
-    };
+      headers: {
+        ...req.headers,
+        host: undefined, // Remove host header to avoid issues
+      },
+      body: req.method === 'POST' ? req.body : undefined,
+    });
   
-    // Handle body for POST/PUT/PATCH
-    if (req.method !== 'GET' && req.body) {
-      fetchOptions.body = JSON.stringify(req.body);
-      fetchOptions.headers['content-type'] = 'application/json';
-    }
-  
-    try {
-      const response = await fetch(apiUrl + '/predict', fetchOptions);
-      const data = await response.text(); // Use .text() to handle both JSON and non-JSON
-      res.status(response.status).send(data);
-    } catch (error) {
-      res.status(500).json({ error: 'Proxy error', details: error.message });
-    }
+    const data = await response.text();
+    res.status(response.status).send(data);
   }

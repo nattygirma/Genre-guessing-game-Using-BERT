@@ -19,13 +19,15 @@ const Header = () => {
                 <span className="author-block">
                   <sup>1</sup>University At Buffalo (SUNY)
                 </span>
-                {/* <span className="eql-cntrb">
-                  <small><br /><sup>*</sup>Corresponding Author</small>
-                </span>
                 <br />
                 <span className="author-block gradient-text">
-                  <b>Conference/Journal Name</b>
-                </span> */}
+                  <button className="button is-normal is-rounded is-dark" onClick={() => window.location.href = '/demo'}>
+                    <span className="icon">
+                      <i className="fas fa-globe"></i>
+                    </span>
+                    <span>try</span>
+                  </button>
+                </span>
               </div>
 
               <div className="column has-text-centered">

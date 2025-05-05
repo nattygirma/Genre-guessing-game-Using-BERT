@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './GenreGame.css';
 import PropTypes from 'prop-types';
-import { predictGenre } from '../services/api';
+
 const GenreGame = ({ isOpen, onClose, movie }) => {
   const navigate = useNavigate();
   const [selectedGenres, setSelectedGenres] = useState([]);
@@ -64,11 +64,16 @@ const GenreGame = ({ isOpen, onClose, movie }) => {
     setShowResult(false);
 
     
-     try {
-      const response = await predictGenre(movie.overview);
-        
- 
-      
+    try {
+      const response = await fetch('/api/predict', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          text: movie.overview
+        })
+      });
 
       const data = await response.json();
       console.log(data.genres);
