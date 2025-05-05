@@ -14,8 +14,8 @@ export default async function handler(req, res) {
         method: req.method,
         headers: {
           ...req.headers,
-          host: undefined, // Remove host header
-          'content-length': undefined, // Let fetch set this
+        //   host: undefined, // Remove host header
+        //   'content-length': undefined, // Let fetch set this
         },
         body,
       });
