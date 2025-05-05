@@ -53,11 +53,16 @@ const GenreGame = ({ isOpen, onClose, movie }) => {
     });
   };
 
+  const apiUrl = import.meta.env.VITE_API_URL; 
+  console.log("apiUrl", apiUrl);
+
+
   const handleSubmit = async () => {
     if (selectedGenres.length === 0) return;
     
     setIsLoading(true);
     setShowResult(false);
+
     
     try {
       const response = await fetch('/api/predict', {
