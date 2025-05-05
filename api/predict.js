@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       if (req.method !== 'GET' && req.body) {
         body = typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
       }
-      console.log("body", body);
+      
   
       const response = await fetch('http://3.89.212.31:80/predict', {
         method: req.method,
@@ -19,6 +19,7 @@ export default async function handler(req, res) {
         },
         body,
       });
+      console.log("response", response);
   
       const contentType = response.headers.get('content-type');
 if (contentType && contentType.includes('application/json')) {

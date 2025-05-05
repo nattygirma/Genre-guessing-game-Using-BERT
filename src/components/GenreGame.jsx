@@ -76,7 +76,7 @@ const GenreGame = ({ isOpen, onClose, movie }) => {
       });
 
       const data = await response.json();
-      console.log(data.genres);
+      console.log("data received", data);
       const topGenres = Object.entries(data.genres)
         .sort(([, a], [, b]) => b - a)
         .slice(0, selectedGenres.length)
