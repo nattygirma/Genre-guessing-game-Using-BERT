@@ -6,7 +6,17 @@
   display: flex;
   flex-direction: column;
 } */
-.movie-details{
+
+ body{
+  color: rgb(39, 39, 39) !important;
+ }
+ .title{
+  color: rgb(39, 39, 39) !important;
+ }
+ table th{
+  color: rgb(39, 39, 39) !important;
+ }
+ .movie-details{
   background-color: rgb(38, 38, 38) !important;
 }
 .sub-section{

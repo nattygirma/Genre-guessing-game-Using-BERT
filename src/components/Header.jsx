@@ -25,14 +25,6 @@ const Header = () => {
                   <sup>1</sup>University At Buffalo (SUNY)
                 </span>
                 <br />
-                <span className="author-block gradient-text">
-                  <button className="button is-normal is-rounded is-dark" onClick={() => predictGenres()}>
-                    <span className="icon">
-                      <i className="fas fa-globe"></i>
-                    </span>
-                    <span>try</span>
-                  </button>
-                </span>
               </div>
 
               <div className="column has-text-centered">
