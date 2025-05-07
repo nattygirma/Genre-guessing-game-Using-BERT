@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function NavBar({handleSearch, searchQuery, setSearchQuery}) {
     return <nav className="navbar">
         <div className="navbar-brand">
-        <Link to="/favorites" className="nav-link">GITHUB</Link>
+        <a href="https://github.com/nattygirma/EAS_501_Final_Project_Genre_Classification_model/tree/main/colab_notebooks" target="_blank" rel="noopener noreferrer" className="nav-link">GITHUB</a>
         <Link to="/" className="nav-link">DOCUMENTATION</Link>
         </div>
         <div className="navbar-links">
