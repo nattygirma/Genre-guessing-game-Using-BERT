@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         body: req.method === 'POST' ? JSON.stringify(req.body) : undefined,
       };
   
-      const response = await fetch('http://3.89.212.31:80/predict', fetchOptions);
+      const response = await fetch('http://54.85.25.206:80/predict', fetchOptions);
       const data = await response.text();
   
       res.status(response.status).send(data);
