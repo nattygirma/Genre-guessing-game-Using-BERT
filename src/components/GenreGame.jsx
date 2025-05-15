@@ -43,6 +43,7 @@ const GenreGame = ({ isOpen, onClose, movie }) => {
     return genreMap[genre] || genre;
   };
 
+  //? handle genre select
   const handleGenreSelect = (genre) => {
     setSelectedGenres(prev => {
       if (prev.includes(genre)) {
